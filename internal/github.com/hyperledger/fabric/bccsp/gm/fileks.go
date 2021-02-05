@@ -367,10 +367,10 @@ func (ks *fileBasedKeyStore) createKeyStoreIfNotExists() error {
 	missing, err := utils.DirMissingOrEmpty(ksPath)
 
 	if missing {
-		fmt.Printf("KeyStore path [%s] missing [%t]: [%s]", ksPath, missing, utils.ErrToString(err))
+		fmt.Println(fmt.Sprintf("KeyStore path [%s] missing [%t]: [%s]", ksPath, missing, utils.ErrToString(err)))
 		err := ks.createKeyStore()
 		if err != nil {
-			fmt.Printf("Failed creating KeyStore At [%s]: [%s]", ksPath, err.Error())
+			fmt.Println(fmt.Sprintf("Failed creating KeyStore At [%s]: [%s]", ksPath, err.Error()))
 			return nil
 		}
 	}
@@ -381,11 +381,11 @@ func (ks *fileBasedKeyStore) createKeyStoreIfNotExists() error {
 func (ks *fileBasedKeyStore) createKeyStore() error {
 	// Create keystore directory root if it doesn't exist yet
 	ksPath := ks.path
-	fmt.Printf("Creating KeyStore at [%s]...", ksPath)
+	fmt.Println(fmt.Sprintf("Creating KeyStore at [%s]...", ksPath))
 
 	os.MkdirAll(ksPath, 0755)
 
-	fmt.Printf("KeyStore created at [%s].", ksPath)
+	fmt.Println(fmt.Sprintf("KeyStore created at [%s].", ksPath))
 	return nil
 }
 
