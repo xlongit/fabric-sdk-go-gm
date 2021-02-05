@@ -8,7 +8,7 @@ package msppvdr
 
 import (
 	"strings"
-	"fmt"
+	//"fmt"
 	"github.com/xlongit/fabric-sdk-go-gm/pkg/common/providers/core"
 	"github.com/xlongit/fabric-sdk-go-gm/pkg/common/providers/fab"
 	"github.com/xlongit/fabric-sdk-go-gm/pkg/common/providers/msp"
